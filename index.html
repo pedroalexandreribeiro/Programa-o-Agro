@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoColheita - Agrinho 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans min-h-screen flex flex-col">
+
+    <header class="bg-green-700 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="sprout" class="w-8 h-8 text-green-300"></i>
+                <span class="text-2xl font-bold tracking-tight">Eco<span class="text-green-300">Colheita</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="#inicio" class="hover:text-green-200 transition">Início</a>
+                <a href="#produtos" class="hover:text-green-200 transition">Alimentos Disponíveis</a>
+                <a href="#cadastrar" class="hover:text-green-200 transition">Doar/Anunciar</a>
+            </nav>
+            <span class="bg-green-600 text-xs px-3 py-1 rounded-full font-semibold border border-green-500">Agrinho 2026</span>
+        </div>
+    </header>
+
+    <section id="inicio" class="bg-gradient-to-b from-green-700 to-green-600 text-white py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Evitando o desperdício, alimentando o futuro.</h1>
+            <p class="text-lg text-green-100 mb-8">Conectando agricultores familiares que possuem excedentes de colheita a feirantes, ONGs e famílias da região.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#produtos" class="bg-amber-500 hover:bg-amber-600 text-stone-900 font-bold px-6 py-3 rounded-lg shadow transition transform hover:-translate-y-0.5">Ver Alimentos</a>
+                <a href="#cadastrar" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-700 font-bold px-6 py-3 rounded-lg transition">Cadastrar Excedente</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 flex-grow w-full grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <section id="produtos" class="lg:col-span-2 space-y-6">
+            <div class="flex justify-between items-center border-b border-stone-200 pb-4">
+                <h2 class="text-2xl font-bold text-stone-800 flex items-center gap-2">
+                    <i data-lucide="shopping-bag" class="text-green-600"></i> Lotes Disponíveis para Resgate
+                </h2>
+                <span id="contador" class="bg-green-100 text-green-800 text-sm font-semibold px-2.5 py-0.5 rounded-full">3 lotes</span>
+            </div>
+
+            <div id="lista-produtos" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                </div>
+        </section>
+
+        <section id="cadastrar" class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 h-fit sticky top-24">
+            <h3 class="text-xl font-bold text-stone-800 mb-4 flex items-center gap-2">
+                <i data-lucide="plus-circle" class="text-amber-500"></i> Anunciar Excedente
+            </h3>
+            <p class="text-sm text-stone-500 mb-6">É produtor? Não deixe sua colheita perder. Cadastre o lote excedente aqui.</p>
+            
+            <form id="form-produto" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-stone-700 mb-1">Nome do Alimento</label>
+                    <input type="text" id="nome" required placeholder="Ex: Tomate Italiano, Alface Crespa" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-stone-700 mb-1">Quantidade</label>
+                        <input type="text" id="quantidade" required placeholder="Ex: 50 kg, 20 caixas" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-stone-700 mb-1">Produtor / Local</label>
+                        <input type="text" id="produtor" required placeholder="Ex: Sítio São José" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-stone-700 mb-1">URL da Imagem (Opcional)</label>
+                    <input type="url" id="imagem" placeholder="https://images.unsplash.com/..." class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-xs">
+                </div>
+
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-lg transition shadow-md flex justify-center items-center gap-2">
+                    <i data-lucide="check" class="w-5 h-5"></i> Publicar Oferta
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-900 text-stone-400 py-8 border-t border-stone-800 text-center text-sm">
+        <p>© 2026 EcoColheita - Projeto Interativo para o Agrinho 2026.</p>
+        <p class="mt-2 text-xs text-stone-600">Desenvolvido com fins educacionais e sustentáveis.</p>
+    </footer>
+
+    <script>
+        // Dados iniciais (Mock) simulando uma API/Banco de dados local
+        let alimentos = [
+            {
+                id: 1,
+                nome: "Cenoura Orgânica",
+                quantidade: "80 kg",
+                produtor: "Chácara Vista Alegre",
+                imagem: "https://images.unsplash.com/photo-1598170845058-32b996a69f76?auto=format&fit=crop&q=80&w=400"
+            },
+            {
+                id: 2,
+                nome: "Melancia Comum",
+                quantidade: "15 unidades",
+                produtor: "Sítio do Sol",
+                imagem: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=400"
+            },
+            {
+                id: 3,
+                nome: "Espinafre Fresco",
+                quantidade: "30 maços",
+                produtor: "Horta Comunitária Sul",
+                imagem: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&q=80&w=400"
+            }
+        ];
+
+        const listaContainer = document.getElementById('lista-produtos');
+        const form = document.getElementById('form-produto');
+        const contador = document.getElementById('contador');
+
+        // Função para renderizar os cards na tela
+        function renderizarProdutos() {
+            listaContainer.innerHTML = '';
+            contador.innerText = `${alimentos.length} lote${alimentos.length !== 1 ? 's' : ''}`;
+
+            alimentos.forEach(item => {
+                const imagemPadrao = "https://images.unsplash.com/photo-1610348725531-843dff14682c?auto=format&fit=crop&q=80&w=400";
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100 flex flex-col justify-between transition hover:shadow-md";
+                
+                card.innerHTML = `
+                    <div>
+                        <img src="${item.imagem || imagemPadrao}" alt="${item.nome}" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <span class="text-xs font-bold uppercase tracking-wider text-green-600 bg-green-50 px-2 py-1 rounded">Disponível</span>
+                            <h4 class="text-xl font-bold text-stone-800 mt-2">${item.nome}</h4>
+                            <div class="mt-4 space-y-2 text-sm text-stone-600">
+                                <p class="flex items-center gap-2"><i data-lucide="scale" class="w-4 h-4 text-stone-400"></i> <strong>Qtd:</strong> ${item.quantidade}</p>
+                                <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-stone-400"></i> <strong>Origem:</strong> ${item.produtor}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="solicitarResgate(${item.id})" class="w-full bg-stone-100 hover:bg-green-600 hover:text-white text-stone-700 font-semibold py-2 rounded-xl transition text-sm flex justify-center items-center gap-2">
+                            <i data-lucide="handshake" class="w-4 h-4"></i> Solicitar Resgate
+                        </button>
+                    </div>
+                `;
+                listaContainer.appendChild(card);
+            });
+            // Recarrega os ícones do Lucide após renderizar o HTML dinâmico
+            lucide.createIcons();
+        }
+
+        // Evento de envio do formulário (Adicionar Novo Lote)
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const novoAlimento = {
+                id: Date.now(),
+                nome: document.getElementById('nome').value,
+                quantidade: document.getElementById('quantidade').value,
+                produtor: document.getElementById('produtor').value,
+                imagem: document.getElementById('imagem').value
+            };
+
+            alimentos.unshift(novoAlimento); // Adiciona no início da lista
+            renderizarProdutos();
+            form.reset(); // Limpa os campos do formulário
+            window.location.hash = '#produtos'; // Rola a página para a lista
+        });
+
+        // Função de Ação do Botão Resgatar
+        function solicitarResgate(id) {
+            const item = alimentos.find(a => a.id === id);
+            alert(`Sucesso! Você solicitou o interesse no lote de "${item.nome}" do produtor "${item.produtor}". O produtor foi notificado!`);
+            // Remove o item da lista (simulando que foi resgatado)
+            alimentos = alimentos.filter(a => a.id !== id);
+            renderizarProdutos();
+        }
+
+        // Inicializa o app na tela
+        renderizarProdutos();
+    </script>
+</body>
+</html>
